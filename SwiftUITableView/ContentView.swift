@@ -16,14 +16,14 @@ struct Person: Identifiable {
 }
 
 struct ContentView: View {
-    var people = [Person(name: "Alphonso", job: "Engineer"),Person(name: "Chelsea", job: "VP"),Person(name: "Danielle", job: "Manager"),Person(name: "Joseph", job: "Social"),Person(name: "Aaron", job: "Director")]
+    var peopleArray = [Person(name: "Alphonso", job: "Engineer"),Person(name: "Chelsea", job: "VP"),Person(name: "Danielle", job: "Manager"),Person(name: "Joseph", job: "Social"),Person(name: "Aaron", job: "Director"),Person(name: "Ashley", job: "Educator"),Person(name: "Thomas", job: "Financial Investor"),Person(name: "Kathy", job: "Teacher"),Person(name: "Alphonso Sr.", job: "Manager"),Person(name: "Dianna", job: "Real Estate Agent")]
     
     
     
     var body: some View {
         NavigationView() {
             
-            List(people) { item in
+            List(peopleArray) { item in
                 Image(systemName: "person.crop.circle").resizable().frame(width: 32.0, height: 32.0, alignment: .leading)
                     .foregroundColor(.blue)
                 
