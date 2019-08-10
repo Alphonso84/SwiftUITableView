@@ -12,21 +12,33 @@ struct Person: Identifiable {
     var id = UUID()
     var name: String
     var job: String
+    var image: String {return "person.crop.circle"}
 }
 
 struct ContentView: View {
-   var people = [Person(name: "Alphonso", job: "Engineer"),Person(name: "Chelsea", job: "VP"),Person(name: "Danielle", job: "Marketing Manager")]
+    var people = [Person(name: "Alphonso", job: "Engineer"),Person(name: "Chelsea", job: "VP"),Person(name: "Danielle", job: "Manager"),Person(name: "Joseph", job: "Social"),Person(name: "Aaron", job: "Director")]
+    
+    
     
     var body: some View {
-        List(people) { item in
-            HStack {
-                Image("placeholder")
-                VStack {
-                    Text(item.name)
-                    Text(item.job)
-                }
-            }
+        NavigationView() {
             
+            List(people) { item in
+                Image(systemName: "person.crop.circle").resizable().frame(width: 32.0, height: 32.0, alignment: .leading)
+                    .foregroundColor(.blue)
+                
+                VStack(alignment:.leading) {
+                    Text(item.name)
+                        .font(.title)
+                        
+                    Text(item.job)
+                        .foregroundColor(.gray)
+                        .font(.subheadline)
+                        .multilineTextAlignment(.leading)
+                        
+                }
+                
+            }.navigationBarTitle("Family")
         }
     }
 }
