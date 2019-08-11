@@ -21,24 +21,15 @@ struct ContentView: View {
     
     
     var body: some View {
-        NavigationView() {
-            
-            List(peopleArray) { item in
-                Image(systemName: "person.crop.circle").resizable().frame(width: 32.0, height: 32.0, alignment: .leading)
-                    .foregroundColor(.blue)
-                
-                VStack(alignment:.leading) {
-                    Text(item.name)
-                        .font(.title)
-                        
-                    Text(item.job)
-                        .foregroundColor(.gray)
-                        .font(.subheadline)
-                        .multilineTextAlignment(.leading)
-                        
-                }
-                
-            }.navigationBarTitle("Family")
+        
+        List(peopleArray) { item in
+            VStack(alignment:.leading) {
+                Text(item.name)
+                Text(item.job)
+                    .foregroundColor(.gray)
+                    .font(.caption)
+                    .multilineTextAlignment(.leading)
+            }
         }
     }
 }
